@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Getting into IPFS and Opening for Evolving.</title>
+  <link rel="icon" href="fav.png">
+  <link rel="stylesheet" href="codemirror.css">
+  <script src="codemirror.js"></script>
+  <style>
+    .CodeMirror {border-top: 1px solid #eee; border-bottom: 1px solid #eee; line-height: 1.3; height: 96%; width: 100%}
+    .CodeMirror-linenumbers { padding: 0 8px; }
+  </style>
+</head>
+<body>
+	<article></article>
+  <button onclick="window.open('i.html')">(i) => iEvolve()</button>
+	<script src="ibipfs.js" "text/javascript"></script>
+  <script type="text/javascript">
+  	window.onload = () => {
+  		window.addEventListener('ibipfs', (e) => {
+  			const ibipfs = window.ibipfs
+
+  			ibipfs
+  			.id()
+  			.then(identity => {
+  				let publisherMeta = document.createElement('meta')
+
+  				publisherMeta.setAttribute('charset', 'utf-8')
+  				publisherMeta.setAttribute('name', 'publisher')
+  				publisherMeta.setAttribute('content', identity.id)
+
+  				document.head.prepend(publisherMeta)
+  			})
+  			.catch(err => console.log('Error: ' + err))
+
+        ibipfs
+  			.addFromURL('ibipfs.js')
+  			.then(res => {
+  	      let editor
+
+          ibipfs
+          .cat(res[0].hash)
+          .then(buf => {
+          	editor = CodeMirror(document.body.getElementsByTagName("article")[0], {
+			        value: buf.toString(),
+			        lineNumbers: true,
+			        mode: "javascript",
+			        autoCloseBrackets: true,
+			        matchBrackets: true,
+			        showCursorWhenSelecting: true,
+			        tabSize: 2
+			      })
+          })
+  			})
+  			.catch(err => console.log('Error: ' + err))
+  		})
+  	}
+  </script>
+</body>
+</html>
