@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>imanager: Managing `*` with the IBIPFS</title>
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="mdb-jquery/fontawesome/css/all.css">
+  <link rel="stylesheet" href="/ipfs/QmRHWAFLWrwrNUdkZTaPcgusD6rhesTizNBF8f2ayLcd1G/mdb-jquery/fontawesome/css/all.css">
   <!-- Bootstrap core CSS -->
-  <link href="mdb-jquery/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/ipfs/QmRHWAFLWrwrNUdkZTaPcgusD6rhesTizNBF8f2ayLcd1G/mdb-jquery/css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
-  <link href="mdb-jquery/css/mdb.min.css" rel="stylesheet">
+  <link href="/ipfs/QmRHWAFLWrwrNUdkZTaPcgusD6rhesTizNBF8f2ayLcd1G/mdb-jquery/css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
-  <link href="mdb-jquery/css/style.min.css" rel="stylesheet">
-  <link rel="icon" href="fav.png">
-  <link rel="stylesheet" href="i/codemirror.css">
-  <script src="i/codemirror.js"></script>
+  <link href="/ipfs/QmRHWAFLWrwrNUdkZTaPcgusD6rhesTizNBF8f2ayLcd1G/mdb-jquery/css/style.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/ipfs/QmRHWAFLWrwrNUdkZTaPcgusD6rhesTizNBF8f2ayLcd1G/i/codemirror.css">
+  <script src="/ipfs/QmRHWAFLWrwrNUdkZTaPcgusD6rhesTizNBF8f2ayLcd1G/i/codemirror.js"></script>
+  <link rel="icon" href="/ipfs/QmRHWAFLWrwrNUdkZTaPcgusD6rhesTizNBF8f2ayLcd1G/i/fav.png">
   <style>
     .CodeMirror {border-top: 1px solid #eee; border-bottom: 1px solid #eee; line-height: 1.3; height: 96%; width: 100%}
     .CodeMirror-linenumbers { padding: 0 8px; }
@@ -78,34 +77,21 @@
           <!-- Left -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link waves-effect" href="#">Tab
+              <a class="nav-link waves-effect" href="index.html">iDashboard
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="#">Tab</a>
+              <a class="nav-link waves-effect" href="iFiles.html">iFiles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="#">Tab</a>
+              <a class="nav-link waves-effect" href="iProfile.html">iProfile</a>
             </li>
           </ul>
           <!-- Right -->
           <ul class="navbar-nav nav-flex-icons">
             <li class="nav-item">
-              <a href="https://www.facebook.com/itemplates-imanager" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="https://twitter.com/itemplates-imanager" class="nav-link waves-effect" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="https://github.com/snspace/itemplates" class="nav-link border border-light rounded waves-effect"
-                target="_blank">
-                <i class="fab fa-github mr-2"></i>
-              </a>
+              <button class="btn btn-primary" data-toggle='modal' data-target='#modalIEvolve' onclick="iEvolve()">(i) => iEvolve()</button>
             </li>
           </ul>
         </div>
@@ -116,19 +102,17 @@
     <div class="sidebar-fixed position-fixed">
       <button class="btn btn-primary" data-toggle='modal' data-target='#modalIEvolve' onclick="iEvolve()">(i) => iEvolve()</button>
       <a class="logo-wrapper waves-effect">
-        <img src="fav.png" class="img-fluid" alt="">
+        <img src="/ipfs/QmRHWAFLWrwrNUdkZTaPcgusD6rhesTizNBF8f2ayLcd1G/i/fav.png" class="img-fluid" alt="">
       </a>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item active waves-effect">
+        <a href="index.html" class="list-group-item active waves-effect">
           <i class="fas fa-chart-pie mr-3"></i>iDashboard
         </a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-user mr-3"></i>
-          iProfile
+        <a href="iFiles.html" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-file mr-3"></i>iFiles
         </a>
-        <a href="#" class="list-group-item list-group-item-action waves-effect">
-          <i class="fas fa-table mr-3"></i>
-          iFiles
+        <a href="iProfile.html" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-user mr-3"></i>iProfile
         </a>
       </div>
     </div>
@@ -220,46 +204,14 @@
     </div>
   </main>
   <!--Main layout-->
-  <!--Footer-->
-  <footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
-    <hr class="my-4">
-    <!-- Social icons -->
-    <div class="pb-4">
-      <a href="https://www.facebook.com/itemplates-imanager" target="_blank">
-        <i class="fab fa-facebook-f mr-3"></i>
-      </a>
-      <a href="https://twitter.com/itemplates-imanager" target="_blank">
-        <i class="fab fa-twitter mr-3"></i>
-      </a>
-      <a href="https://dribbble.com/itemplates-imanager" target="_blank">
-        <i class="fab fa-dribbble mr-3"></i>
-      </a>
-      <a href="https://pinterest.com/itemplates-imanager" target="_blank">
-        <i class="fab fa-pinterest mr-3"></i>
-      </a>
-      <a href="https://github.com/snspace/itemplates" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
-      <a href="http://codepen.io/itemplates-imanager/" target="_blank">
-        <i class="fab fa-codepen mr-3"></i>
-      </a>
-    </div>
-    <!-- Social icons -->
-    <!--Copyright-->
-    <div class="footer-copyright py-3">Copyright:
-      <a href="#" target="_blank"> itemplates </a>
-    </div>
-    <!--/.Copyright-->
-  </footer>
-  <!--/.Footer-->
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="mdb-jquery/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="/ipfs/QmRHWAFLWrwrNUdkZTaPcgusD6rhesTizNBF8f2ayLcd1G/mdb-jquery/js/jquery-3.3.1.min.js"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="mdb-jquery/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/ipfs/QmRHWAFLWrwrNUdkZTaPcgusD6rhesTizNBF8f2ayLcd1G/mdb-jquery/js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="mdb-jquery/js/mdb.min.js"></script>
-  <script type="text/javascript" src="i/ibipfs.js"></script>
+  <script type="text/javascript" src="/ipfs/QmRHWAFLWrwrNUdkZTaPcgusD6rhesTizNBF8f2ayLcd1G/mdb-jquery/js/mdb.min.js"></script>
+  <script type="text/javascript" src="/ipfs/QmRHWAFLWrwrNUdkZTaPcgusD6rhesTizNBF8f2ayLcd1G/i/ibipfs.js"></script>
   <!-- MDB -->
   <!-- Initializations -->
   <script type="text/javascript">
@@ -370,16 +322,11 @@
         let decision = confirm('Evolved! Have a look? :)')
 
         if (decision) {
-          ibipfs
-          .cat(res[0].hash)
-          .then(buf => {
-            editor.setValue(buf.toString())
-          })
-          /*let url = window.location.href
+          let url = window.location.href
 
           url = url.slice(0, url.lastIndexOf('/ipfs/')) + '/ipfs/' + res[0].hash
 
-          window.open(url)*/
+          window.open(url)
         } else {
           alert('Evolved @ /ipfs/' + res[0].hash)
         }
